@@ -1,9 +1,30 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useContext } from "react";
 import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext);
+
+    const handleRegister = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        console.log(name, photo, email, password)
+        createUser(email, password)
+            .then(result => {
+                const createdUser = result.user;
+                console.log(createdUser);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
   return (
     <div>
       <div>
@@ -17,7 +38,7 @@ const Register = () => {
                       Logo
                     </h2>
                     <div className="mb-3">
-                      <Form>
+                      <Form onSubmit={handleRegister}>
                         <Form.Group className="mb-3" controlId="Name">
                           <Form.Label className="text-center">Name</Form.Label>
                           <Form.Control type="text" placeholder="Enter Name" />
@@ -29,7 +50,7 @@ const Register = () => {
                           </Form.Label>
                           <Form.Control
                             type="email"
-                            placeholder="Enter email"
+                            placeholder="Enter email" required
                           />
                         </Form.Group>
 
@@ -40,7 +61,7 @@ const Register = () => {
                           <Form.Label>Password</Form.Label>
                           <Form.Control
                             type="password"
-                            placeholder="Password"
+                            placeholder="Password" required
                           />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -49,7 +70,7 @@ const Register = () => {
                             type="text"
                             name="photo"
                             placeholder="Photo URL"
-                            required
+                         
                           />
                         </Form.Group>
                         <Form.Group

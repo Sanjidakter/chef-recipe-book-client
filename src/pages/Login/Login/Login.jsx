@@ -1,9 +1,11 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useContext } from 'react';
 import { Col, Button, Row, Container, Card, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
+    const {user,signIn} = useContext(AuthContext);
     return (
         <div>
         <Container>
