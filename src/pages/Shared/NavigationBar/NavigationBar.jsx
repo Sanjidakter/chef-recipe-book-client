@@ -1,13 +1,21 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useContext } from "react";
 import img from "../../../assets/healthy-recipes-cookbook-kitchen.webp";
 import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavigationBar = () => {
+  const {user,logOut} = useContext(AuthContext);
+  const handleLogout = () =>{
+   logOut()
+   .then()
+   .catch(error=>console.log(error)
+    )
+  }
   return (
     <Container>
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -24,22 +32,17 @@ const NavigationBar = () => {
               <Link style={{textDecoration: 'none'}} to="/blog">Blog</Link>
              
             </Nav>
-            <Nav>
-              {/* {user && ( */}
-                
-                  {/* <FaUserCircle style={{ fontSize: "2rem" }}></FaUserCircle> */}
-                
-              {/* )} */}
-            
-                {/* {user ? ( */}
-                  <Button  variant="secondary">Logout</Button>
-                {/* ) : ( */}
-                  <Link to="/login">
-                    <Button variant="secondary">Login</Button>
-                  </Link>
-                {/* )} */}
-             
-            </Nav>
+          <Nav>
+            {
+              user?(
+                <Button onClick={handleLogout} variant="secondary"> {user?.email} <img style={{borderRadius:'50%',width:'20%'}} src={user?.photoURL} alt="" /> </Button>
+              ):(
+                <Link>
+                <Button variant="secondary">Login</Button>
+                </Link>
+              )
+            }
+          </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>

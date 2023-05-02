@@ -1,11 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../firebase/firebase.config';
-import { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth,createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup, GithubAuthProvider } from "firebase/auth";
 
 export const AuthContext = createContext(null);
 
 const auth = getAuth(app);
+const googleAuthProvider = new GoogleAuthProvider();
+const githubAuthProvider = new GithubAuthProvider();
 
 // eslint-disable-next-line react/prop-types
 const AuthProvider = ({children}) => {
@@ -20,6 +22,14 @@ const AuthProvider = ({children}) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth,email,passsword);
     
+      }
+
+      const signInWithGoogle = () =>{
+        return signInWithPopup(auth,googleAuthProvider);
+      }
+
+      const signInWithGithub = () =>{
+        return signInWithPopup(auth,githubAuthProvider);
       }
     
       const logOut = () =>{
@@ -45,6 +55,8 @@ const AuthProvider = ({children}) => {
          loading,
          createUser,
          signIn,
+         signInWithGoogle,
+         signInWithGithub,
          logOut,
        };
 
