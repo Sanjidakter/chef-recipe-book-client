@@ -3,8 +3,8 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div>
-             <p><small>copyright of my news</small></p>
+        <div style={{marginLeft:'40%'}}>
+             <p><small>&copy; 2023 Chef Recipes</small></p>
         </div>
     );
 };

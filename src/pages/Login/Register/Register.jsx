@@ -4,9 +4,12 @@ import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
+
 const Register = () => {
   const [error, setError] = useState("");
-  const { createUser } = useContext(AuthContext);
+  const { createUser,profileUpdate } = useContext(AuthContext);
+
+  
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -18,6 +21,8 @@ const Register = () => {
 
     console.log(name, photo, email, password);
 
+   
+
     setError('');
 
     if(password.length <6)
@@ -28,12 +33,20 @@ const Register = () => {
     createUser(email,password)
     .then(result=>{
       const loggedUSer = result.user;
-      console.log(loggedUSer)
+      console.log(loggedUSer);
+      profileUpdate(name, photo)
+          .then(() => {
+            console.log(loggedUSer);
+          })
+         .catch((error) => {
+            console.log(error);
+          });
     })
     .catch(error=>{
       console.log(error)
       setError(error.message)
     })
+
   };
   return (
     <div>

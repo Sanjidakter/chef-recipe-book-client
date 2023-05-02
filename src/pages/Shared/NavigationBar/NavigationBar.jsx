@@ -35,7 +35,7 @@ const NavigationBar = () => {
           <Nav>
             {
               user?(
-                <Button onClick={handleLogout} variant="secondary"> {user?.email} <img style={{borderRadius:'50%',width:'20%'}} src={user?.photoURL} alt="" /> </Button>
+                <Button onClick={handleLogout} variant="secondary"> {user?.email} <img style={{borderRadius:'50%',width:'5%'}} src={user?.photoURL} alt="" /> </Button>
               ):(
                 <Link>
                 <Button variant="secondary">Login</Button>
