@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./ChefCards.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 
 // eslint-disable-next-line react/prop-types
 const NewsCard = ({ chefs }) => {
@@ -32,7 +34,8 @@ const NewsCard = ({ chefs }) => {
         >
           <Card.Title>Experience: {experience}</Card.Title>
           <Card.Text>Number of Recipes: {numRecipes}</Card.Text>
-          <Card.Text>Likes: {likes}</Card.Text>
+          
+          <Card.Text><FontAwesomeIcon icon={faThumbsUp} /> {likes}</Card.Text>
           
           <Link to={`/recipe/${id}`}>ViewRecipes</Link>
           
