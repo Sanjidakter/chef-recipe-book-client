@@ -8,6 +8,8 @@ import Main from "../layouts/Main";
 import Chef from "../pages/Home/Home/Chef/Chef"
 import ReceipeLayout from "../layouts/ReceipeLayout";
 import PrivateRoute from "./PrivateRoute";
+import ErrorRoute from "../pages/ErrorRoute/ErrorRoute";
+import Receipe from "../pages/Receipe/Receipe/Receipe";
 
 
 
@@ -43,17 +45,21 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "news",
+    path: "/recipe",
     element: <ReceipeLayout></ReceipeLayout>,
     children: [
       {
         path: ":id",
-        element: <PrivateRoute></PrivateRoute>,
+        element:<Receipe></Receipe>,
         loader: ({ params }) =>
           fetch(`https://the-news-dragon-server-sanji2601.vercel.app/news/${params.id}`),
       },
     ],
   },
+  {
+    path:"*",
+    element: <ErrorRoute></ErrorRoute>
+  }
   
 ]);
 

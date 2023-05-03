@@ -10,7 +10,7 @@ const Category = () => {
     useEffect(() => {
       const loadData = async () => {
         try {
-          const response = await fetch("http://localhost:5000/chefs");
+          const response = await fetch("http://localhost:5000/recipe");
           const data = await response.json();
           setChef(data);
         } catch (error) {
