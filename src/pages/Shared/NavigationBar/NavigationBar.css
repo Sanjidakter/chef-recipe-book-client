@@ -20,4 +20,16 @@ nav ul {
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
   }
-  
+/* styles.css */
+
+.my-button {
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    max-width: 100px;
+    max-height: 100px;
+    /* add any other custom styles you want */
+  } 
+    
