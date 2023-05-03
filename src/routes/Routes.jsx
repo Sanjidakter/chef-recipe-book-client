@@ -10,6 +10,7 @@ import ReceipeLayout from "../layouts/ReceipeLayout";
 import PrivateRoute from "./PrivateRoute";
 import ErrorRoute from "../pages/ErrorRoute/ErrorRoute";
 import Receipe from "../pages/Receipe/Receipe/Receipe";
+import Blogs from "../pages/Blogs/Blogs"
 
 
 
@@ -51,14 +52,17 @@ const router = createBrowserRouter([
       {
         path: ":id",
         element:<Receipe></Receipe>,
-        loader: ({ params }) =>
-          fetch(`https://the-news-dragon-server-sanji2601.vercel.app/news/${params.id}`),
+        
       },
     ],
   },
   {
     path:"*",
     element: <ErrorRoute></ErrorRoute>
+  },
+  {
+    path:"/blogs",
+    element:<Blogs></Blogs>
   }
   
 ]);

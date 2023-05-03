@@ -29,15 +29,16 @@ const NavigationBar = () => {
               
                 <Link style={{textDecoration: 'none',marginRight:'20px'}} to="/">Home</Link>
               
-              <Link style={{textDecoration: 'none'}} to="/blog">Blog</Link>
+              <Link style={{textDecoration: 'none'}} to="/blogs">Blog</Link>
              
             </Nav>
           <Nav>
             {
               user?(
-                <Button onClick={handleLogout} variant="secondary"> {user?.email} <img style={{borderRadius:'50%',width:'5%'}} src={user?.photoURL} alt="" /> </Button>
+                <Button onClick={handleLogout} variant="secondary"> {user?.displayName
+                } <img style={{borderRadius:'50%',width:'5%'}} src={user?.photoURL} alt="" /> </Button>
               ):(
-                <Link>
+                <Link to="/login">
                 <Button variant="secondary">Login</Button>
                 </Link>
               )

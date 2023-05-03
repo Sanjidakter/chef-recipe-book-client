@@ -5,12 +5,12 @@ import ChefCards from "../../ChefCard/ChefCards";
 
 const Category = () => {
    
-    const [chef, setChef] = useState([]);
+    const [chefs, setChef] = useState([]);
 
     useEffect(() => {
       const loadData = async () => {
         try {
-          const response = await fetch("http://localhost:5000/recipe");
+          const response = await fetch(" https://chef-recipe-book-server-sanji2601.vercel.app/recipe");
           const data = await response.json();
           setChef(data);
         } catch (error) {
@@ -22,13 +22,13 @@ const Category = () => {
     
     return (
         <div>
-            <h1 style={{textAlign:'center'}}>Chef List</h1>
-           <h2>{chef.length}</h2>
+            <h1 style={{textAlign:'center'}}>Chefs List</h1>
+           <h2>{chefs.length}</h2>
            {
-            chef.map((chef)=>(
+            chefs.map((chefs)=>(
                 <ChefCards
-                 key={chef.id}
-                 chef ={chef}>
+                 key={chefs.id}
+                 chefs ={chefs}>
 
                  </ChefCards>
             ))
