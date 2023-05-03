@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { faThumbsUp, faDiagramSuccessor} from "@fortawesome/free-solid-svg-icons";
 import RecipeCard from "../RecipeCard/RecipeCard";
 
 const Receipe = () => {
@@ -34,24 +34,24 @@ const Receipe = () => {
     <div >
       <section style={{ display: "flex" }} className="chefIntro">
         <div
-          style={{ marginLeft: "20%", marginTop: "5%", alignContent: "center" }}
+          style={{ marginLeft: "10%", marginTop: "30%", alignContent: "center" }}
         >
-          <h1>{recipe.name}</h1>
-          <p>{recipe.bio}</p>
-          <h3>Years of Experience{recipe.experience}</h3>
-          <h3>
+          <i><h1 style={{marginTop:'5%'}}>{recipe.name}</h1></i>
+          <h2 style={{marginTop:'5%'}}>{recipe.bio}</h2>
+          <h3 style={{marginTop:'5%'}}><FontAwesomeIcon icon={faDiagramSuccessor} /> {recipe.likes}Years of Experience : {recipe.experience}</h3>
+          <h3 style={{marginTop:'5%'}}>
             <FontAwesomeIcon icon={faThumbsUp} /> {recipe.likes}
           </h3>
-          <h3>Recipes:{recipe.numRecipes}</h3>
+          <h3 style={{marginTop:'5%'}}>Recipes:{recipe.numRecipes}</h3>
         </div>
 
         <img
           src={recipe.picture}
-          style={{ width: "50%", height: "80%" }}
+          style={{ width: "50%", maxHeight: "60%",objectFit:'cover' }}
           alt=""
         />
       </section>
-      <section className="recipes">
+      <section style={{padding:'10%'}} className="recipes">
         <div className="row">
           {recipe.recipes.map((recipe, index) => (
             <div className="col-md-4 mb-4" key={index}>
