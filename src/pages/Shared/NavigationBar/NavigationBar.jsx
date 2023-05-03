@@ -34,7 +34,17 @@ const NavigationBar = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <nav>
               <img style={{ height: "64px", width: "80px" }} src={img} alt="" />
-            </nav>
+            </nav>{" "}
+            <p
+              style={{
+                fontWeight: "bold",
+                color: "black",
+                fontFamily: " sans-serif",
+              }}
+            >
+              {" "}
+              Chef Recipe Book
+            </p>
             <Nav className="mx-auto">
               <li className={homeMatch ? "active" : ""}>
                 <Link
@@ -52,20 +62,19 @@ const NavigationBar = () => {
             </Nav>
             <Nav>
               {user ? (
-               <Button 
-               onClick={handleLogout} 
-               variant="secondary" 
-               style={{ maxWidth: "100px" }}
-             >
-              {" "}
-               <img
-                 style={{ borderRadius: "50%", width: "30%" }}
-                 src={user?.photoURL}
-                 alt=""
-                 title={user?.displayName}
-               />
-             </Button>
-             
+                <Button
+                  onClick={handleLogout}
+                  variant="secondary"
+                  style={{ maxWidth: "100px" }}
+                >
+                  {" "}
+                  <img
+                    style={{ borderRadius: "50%", width: "30%" }}
+                    src={user?.photoURL}
+                    alt=""
+                    title={user?.displayName}
+                  />
+                </Button>
               ) : (
                 <Link to="/login">
                   <Button variant="secondary">Login</Button>

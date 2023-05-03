@@ -51,7 +51,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: ":id",
-        element:<Receipe></Receipe>,
+        element:<PrivateRoute><Receipe></Receipe></PrivateRoute>
         
       },
     ],
@@ -66,5 +66,7 @@ const router = createBrowserRouter([
   }
   
 ]);
+
+
 
 export default router;

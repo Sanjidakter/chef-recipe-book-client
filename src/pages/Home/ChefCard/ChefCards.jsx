@@ -19,7 +19,7 @@ const NewsCard = ({ chefs }) => {
         {name} 
       </Card.Header>
       <Card.Body style={{ display: "flex" }}>
-        <Card.Img style={{ width: "30%" }} variant="top" src={picture} />
+        <Card.Img style={{ width: "40%" }} variant="top" src={picture} />
         <div
           style={{
             marginLeft: "20%",
