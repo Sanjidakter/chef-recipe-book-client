@@ -31,15 +31,14 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "category",
+    path: "/",
     element: <Main></Main>,
     children: [
      
       {
-        path: ":id",
+        path: "/chefs",
         element: <Chef></Chef>,
-        loader: ({ params }) =>
-          fetch(`https://the-news-dragon-server-sanji2601.vercel.app/categories/${params.id}`),
+        
       },
     ],
   },

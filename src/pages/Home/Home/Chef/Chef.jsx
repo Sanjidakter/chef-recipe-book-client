@@ -1,24 +1,38 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import ChefCards from "../../ChefCard/ChefCards";
 
 
 const Category = () => {
-    const {id} = useParams();
-    const categoryNews = useLoaderData();
+   
+    const [chef, setChef] = useState([]);
+
+    useEffect(() => {
+      const loadData = async () => {
+        try {
+          const response = await fetch("http://localhost:5000/chefs");
+          const data = await response.json();
+          setChef(data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      loadData();
+    }, []);
     
     return (
         <div>
-           
-            {
-                categoryNews.map(chef =>
-                    <ChefCards
-                    key={chef._id}
-                    chef= {chef}
-                    ></ChefCards>
-                    )
-            }
+            <h1 style={{textAlign:'center'}}>Chef List</h1>
+           <h2>{chef.length}</h2>
+           {
+            chef.map((chef)=>(
+                <ChefCards
+                 key={chef.id}
+                 chef ={chef}>
+
+                 </ChefCards>
+            ))
+           }
         </div>
     );
 };
