@@ -67,7 +67,7 @@ const NavigationBar = () => {
             {user ? (
                 <Link to="/userdetail" >
                   <img
-                    style={{ borderRadius: "50%", width: "40%", }}
+                    style={{ borderRadius: "50%", width: "80%", }}
                     src={user?.photoURL}
                     alt=""
                     title={user?.displayName}
