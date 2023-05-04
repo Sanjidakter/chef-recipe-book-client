@@ -23,7 +23,7 @@ const Category = () => {
     return (
         <div>
             <h1 style={{textAlign:'center'}}>Chefs List</h1>
-           <h2>{chefs.length}</h2>
+           {/* <h2>{chefs.length}</h2> */}
            {
             chefs.map((chefs)=>(
                 <ChefCards

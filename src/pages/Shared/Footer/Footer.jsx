@@ -19,6 +19,12 @@ const Footer = () => {
                 <a href="#">About Us</a>
               </li>
               <li>
+                <a href="#">iOS App</a>
+              </li>
+              <li>
+                <a href="#">Android App</a>
+              </li>
+              <li>
                 <a href="#">Contact Us</a>
               </li>
             </ul>

@@ -37,7 +37,7 @@ const RecipeCard = ({ name, ingredients, method, rating }) => {
         <Toast
           show={showToast}
           onClose={() => setShowToast(false)}
-          delay={3000}
+          delay={5000}
           autohide
           style={{
             position: "absolute",

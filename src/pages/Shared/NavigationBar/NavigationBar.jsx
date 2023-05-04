@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext } from "react";
 import img from "../../../assets/healthy-recipes-cookbook-kitchen.webp";
+import logo from "../../../assets/logo.webp";
 import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -8,6 +9,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link, useLocation, useMatch } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import "./NavigationBar.css";
+
 
 const NavigationBar = () => {
   // eslint-disable-next-line no-unused-vars
@@ -23,7 +25,7 @@ const NavigationBar = () => {
   };
   return (
     <div>
-      <Container>
+      <Container >
         <Navbar
           style={{ width: "100%" }}
           collapseOnSelect
@@ -34,19 +36,19 @@ const NavigationBar = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <nav>
-              <img style={{ height: "64px", width: "80px" }} src={img} alt="" />
+              <img style={{ height: "64px", width: "80px" }} src={logo} alt="" />
             </nav>{" "}
-            <p
+            <p className="w-75"
               style={{
                 fontWeight: "bold",
                 color: "black",
                 fontFamily: " sans-serif",
               }}
             >
-              {" "}
+              
               Chef Recipe Book
             </p>
-            <Nav className="mx-auto">
+            <Nav className="mx-auto w-75" style={{padding:'10%'}}>
               <li className={homeMatch ? "active" : ""}>
                 <Link
                   style={{ textDecoration: "none", marginRight: "20px" }}
@@ -61,28 +63,27 @@ const NavigationBar = () => {
                 </Link>
               </li>
             </Nav>
-            <Nav>
-              {user ? (
-                <Button variant="secondary" style={{ maxWidth: "100px" }}>
-                  {" "}
-                  <Link to="/userdetail">
+            <Nav style={{width:'40%'}}>
+            {user ? (
+                <Link to="/userdetail" >
                   <img
-                    style={{ borderRadius: "50%", width: "30%" }}
+                    style={{ borderRadius: "50%", width: "40%", }}
                     src={user?.photoURL}
                     alt=""
                     title={user?.displayName}
                   />
-                  </Link>
-                </Button>
+                </Link>
               ) : (
+               
                 <Link to="/login">
                   <Button variant="secondary">Login</Button>
                 </Link>
               )}
-            </Nav>
-            <Nav>
-              <Link to="/login">
-                <Button style={{marginLeft:'10%'}} onClick={handleLogout} variant="secondary">
+              <Link to="/login" style={{marginLeft:'10%',marginRight:'15%' }}>
+                <Button
+                  onClick={handleLogout}
+                  variant="secondary"
+                >
                   Logout
                 </Button>
               </Link>
