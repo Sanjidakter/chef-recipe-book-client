@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import ErrorRoute from "../pages/ErrorRoute/ErrorRoute";
 import Receipe from "../pages/Receipe/Receipe/Receipe";
 import Blogs from "../pages/Blogs/Blogs"
+import UserDetail from "../pages/UserDetail/UserDetail";
 
 
 
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
+      {
+        path:'/userdetail',
+        element:<UserDetail></UserDetail>,
+      }
     ],
   },
   {

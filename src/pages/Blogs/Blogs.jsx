@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useRef } from "react";
 import NavigationBar from "../Shared/NavigationBar/NavigationBar";
 import Footer from "../Shared/Footer/Footer";
 import { Card } from "react-bootstrap";
@@ -7,10 +7,18 @@ import { Card } from "react-bootstrap";
 
 const Blogs = () => {
 
+  
+
+  const handlePrint = () => {
+    window.print();
+  };
+
+
+
   return (
     <div>
       <NavigationBar></NavigationBar>
-      
+      <button style={{marginLeft:'10%'}} onClick={handlePrint}>Download PDF</button>
       <Card style={{ width: "100%", height: "100%",padding:"5%",fontWeight:'bold' }}>
         <Card.Body>
           <Card.Title>

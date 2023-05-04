@@ -50,16 +50,16 @@ const Register = () => {
   };
   return (
     <div>
-      <Container className="w-25 mx-auto">
+      <Container className="square border border-dark w-75 mx-auto mt-lg-5 p-5">
         <h3>Please Register</h3>
-        <Form onSubmit={handleRegister}>
+        <Form className="w-50" onSubmit={handleRegister}>
           <Form.Group className="mb-3" controlId="formBasicName">
             <Form.Label>Name</Form.Label>
             <Form.Control
               type="text"
               name="name"
               placeholder="Your Name"
-              required
+             
             />
           </Form.Group>
 
@@ -96,7 +96,7 @@ const Register = () => {
             Already Have an Account? <Link to="/login">Login</Link>
           </Form.Text>
           <Form.Text className="text-success"></Form.Text>
-          <p className="text-danger">{error}</p>
+          <p style={{fontWeight:"bold",fontSize:"24px",backgroundColor:'wheat'}} className="text-danger">{error}</p>
         </Form>
       </Container>
     </div>

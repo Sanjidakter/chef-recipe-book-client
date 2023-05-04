@@ -5,7 +5,6 @@ import lisbon from "../../../assets/lisbon.webp";
 import sanfrisco from "../../../assets/sanfransico.webp";
 import landing from "../../../assets/landing.webp";
 import london from "../../../assets/london.webp";
-import p1 from "../../../assets/p1.webp";
 import p2 from "../../../assets/p2.webp";
 import p3 from "../../../assets/p3.webp";
 import "../Home/Home.css";
@@ -15,6 +14,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import { Spinner } from "react-bootstrap";
 
 const Home = () => {
+  // eslint-disable-next-line no-unused-vars
   const { user, loading } = useContext(AuthContext);
   if(loading){
     return <Spinner animation="border" variant="primary"></Spinner>;
@@ -25,11 +25,11 @@ const Home = () => {
         <header>
           <h1 style={{ marginLeft: "30%" }}>Welcome to Chef Recipe Book</h1>
         </header>
-        <main style={{ display: "flex" }}>
-          <section className="intro">
+        <main className="row" style={{ display: "flex" }}>
+          <div  className="intro col span-1-of-2">
             <img src={landing} alt="" />
-          </section>
-          <section
+          </div >
+          <div className="col span-1-of-2"
             style={{ padding: "40px", textAlign: "center", borderRadius: "10px" }}
           >
             <h2 style={{ fontWeight: "bold", textAlign: "center" }}>
@@ -40,7 +40,7 @@ const Home = () => {
               create your next culinary masterpiece.
             </p>
             <a href="#">Get started</a>
-          </section>
+          </div >
         </main>
         <section
           style={{ marginTop: "10%", marginBottom: "10%" }}
@@ -130,7 +130,7 @@ const Home = () => {
         </section>
         <section style={{marginBottom:'10%'}} className="section-testimonials">
           <div className="row ">
-            <h2 style={{ fontWeight: "bold", textAlign: "center" }}>
+            <h2 style={{ fontWeight: "bold", textAlign: "center",marginBottom:'10%' }}>
               Our customers can't live without us
             </h2>
           </div>
@@ -138,8 +138,8 @@ const Home = () => {
             <div className="col span-1-of-4 ">
               <blockquote>
                 <p>
-                  Omnifood is just awesome! I just launched a startup which leaves
-                  me with no time for cooking, so Omnifood is a life-saver. Now
+                  Chef Recipe Book is just awesome! I just launched a startup which leaves
+                  me with no time for cooking, so Chef Recipe Book is a life-saver. Now
                   that I got used to it, I couldn't live without my daily meals!
                 </p>
                 <cite>
@@ -155,8 +155,8 @@ const Home = () => {
             <div className="col span-1-of-4">
               <blockquote>
                 <p>
-                  Omnifood is just awesome! I just launched a startup which leaves
-                  me with no time for cooking, so Omnifood is a life-saver. Now
+                  Chef Recipe Book is just awesome! I just launched a startup which leaves
+                  me with no time for cooking, so Chef Recipe Book is a life-saver. Now
                   that I got used to it, I couldn't live without my daily meals!
                 </p>
                 <cite>
@@ -172,8 +172,8 @@ const Home = () => {
             <div className="col span-1-of-4">
               <blockquote>
                 <p>
-                  Omnifood is just awesome! I just launched a startup which leaves
-                  me with no time for cooking, so Omnifood is a life-saver. Now
+                  Chef Recipe Book is just awesome! I just launched a startup which leaves
+                  me with no time for cooking, so Chef Recipe Book is a life-saver. Now
                   that I got used to it, I couldn't live without my daily meals!
                 </p>
                 <cite>

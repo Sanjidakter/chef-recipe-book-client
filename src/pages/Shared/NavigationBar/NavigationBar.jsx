@@ -63,24 +63,29 @@ const NavigationBar = () => {
             </Nav>
             <Nav>
               {user ? (
-                <Button
-                  onClick={handleLogout}
-                  variant="secondary"
-                  style={{ maxWidth: "100px" }}
-                >
+                <Button variant="secondary" style={{ maxWidth: "100px" }}>
                   {" "}
+                  <Link to="/userdetail">
                   <img
                     style={{ borderRadius: "50%", width: "30%" }}
                     src={user?.photoURL}
                     alt=""
                     title={user?.displayName}
                   />
+                  </Link>
                 </Button>
               ) : (
                 <Link to="/login">
                   <Button variant="secondary">Login</Button>
                 </Link>
               )}
+            </Nav>
+            <Nav>
+              <Link to="/login">
+                <Button style={{marginLeft:'10%'}} onClick={handleLogout} variant="secondary">
+                  Logout
+                </Button>
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

@@ -1,10 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
+// eslint-disable-next-line no-unused-vars
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faDiagramSuccessor} from "@fortawesome/free-solid-svg-icons";
 import RecipeCard from "../RecipeCard/RecipeCard";
+import LazyLoad from "react-lazy-load";
 
 const Receipe = () => {
   const { id } = useParams();
@@ -34,7 +36,7 @@ const Receipe = () => {
     <div >
       <section style={{ display: "flex" }} className="chefIntro">
         <div
-          style={{ marginLeft: "10%", marginTop: "30%", alignContent: "center" }}
+          style={{ marginLeft: "10%", marginTop: "25%", alignContent: "center" }}
         >
           <i><h1 style={{marginTop:'5%'}}>{recipe.name}</h1></i>
           <h2 style={{marginTop:'5%'}}>{recipe.bio}</h2>
@@ -45,11 +47,13 @@ const Receipe = () => {
           <h3 style={{marginTop:'5%'}}>Recipes:{recipe.numRecipes}</h3>
         </div>
 
-        <img
+       <LazyLoad>
+       <img
           src={recipe.picture}
-          style={{ width: "50%", maxHeight: "60%",objectFit:'cover' }}
+          style={{ width: "80%", maxHeight: "100%",objectFit:'cover' }}
           alt=""
         />
+       </LazyLoad>
       </section>
       <section style={{padding:'10%'}} className="recipes">
         <div className="row">
