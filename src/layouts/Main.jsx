@@ -1,23 +1,27 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
-import { Container } from 'react-bootstrap';
-import Home from '../pages/Home/Home/Home';
-import NavigationBar from '../pages/Shared/NavigationBar/NavigationBar';
-import Chef from '../pages/Home/Home/Chef/Chef'
-
-
+import React, { useContext } from "react";
+import { Container, Spinner } from "react-bootstrap";
+import Home from "../pages/Home/Home/Home";
+import NavigationBar from "../pages/Shared/NavigationBar/NavigationBar";
+import Chef from "../pages/Home/Home/Chef/Chef";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Main = () => {
-    return (
-        <div>
-            <Container>
-               <Home></Home>
-               <Chef></Chef>
-               
-            </Container>
+  const { user, loading } = useContext(AuthContext);
+  if (loading) {
+    return <Spinner animation="border" variant="primary" />;
+  }
 
-        </div>
+
+    return (
+      <div>
+        <Container>
+          <Home></Home>
+          <Chef></Chef>
+        </Container>
+      </div>
     );
+  
 };
 
 export default Main;

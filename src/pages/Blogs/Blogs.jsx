@@ -1,12 +1,16 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import NavigationBar from "../Shared/NavigationBar/NavigationBar";
 import Footer from "../Shared/Footer/Footer";
 import { Card } from "react-bootstrap";
 
+
 const Blogs = () => {
+
   return (
     <div>
       <NavigationBar></NavigationBar>
+      
       <Card style={{ width: "100%", height: "100%",padding:"5%",fontWeight:'bold' }}>
         <Card.Body>
           <Card.Title>

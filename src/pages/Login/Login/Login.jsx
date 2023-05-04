@@ -1,13 +1,18 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext, useState } from 'react';
 import { Col, Button, Row, Container, Card, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const Login = () => {
+  // eslint-disable-next-line no-unused-vars
   const [user,setUser] = useState(null);
-    const { signIn,
-      signInWithGoogle, signInWithGithub} = useContext(AuthContext);
+  const { signIn,signInWithGoogle, signInWithGithub} = useContext(AuthContext);
+  
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log('login page location', location)
+  const from = location.state?.from?.pathname || '/'
 
       const handleLogin = event =>{
         event.preventDefault();
@@ -22,7 +27,8 @@ const Login = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 setUser(loggedUser);
-                form.reset();
+                navigate(from,{replace:true})
+                // form.reset();
             })
             .catch(error => {
                 console.log(error)

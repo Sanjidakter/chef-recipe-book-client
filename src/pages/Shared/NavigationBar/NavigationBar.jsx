@@ -10,6 +10,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import "./NavigationBar.css";
 
 const NavigationBar = () => {
+  // eslint-disable-next-line no-unused-vars
   const location = useLocation();
   const homeMatch = useMatch("/");
   const blogMatch = useMatch("/blogs");

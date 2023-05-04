@@ -3,12 +3,13 @@ import React from 'react';
 import NavigationBar from '../pages/Shared/NavigationBar/NavigationBar';
 import Footer from '../pages/Shared/Footer/Footer';
 import Receipe from '../pages/Receipe/Receipe/Receipe';
+import { Outlet } from 'react-router-dom';
 
 const ReceipeLayout = () => {
     return (
         <div>
             <NavigationBar></NavigationBar>
-            <Receipe></Receipe>
+            <Outlet></Outlet>
             <Footer></Footer>
         </div>
     );
