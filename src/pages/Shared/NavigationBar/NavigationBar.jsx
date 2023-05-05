@@ -10,7 +10,6 @@ import { Link, useLocation, useMatch } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import "./NavigationBar.css";
 
-
 const NavigationBar = () => {
   // eslint-disable-next-line no-unused-vars
   const location = useLocation();
@@ -25,7 +24,7 @@ const NavigationBar = () => {
   };
   return (
     <div>
-      <Container >
+      {/* <Container >
         <Navbar
           style={{ width: "100%" }}
           collapseOnSelect
@@ -90,7 +89,66 @@ const NavigationBar = () => {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-      </Container>
+      </Container> */}
+
+      <Navbar bg="light" variant="light">
+        <Container>
+          <Navbar.Brand href="#home">
+            <img
+              alt=""
+              src={logo}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{" "}
+            Chef Recipe Book
+          </Navbar.Brand>
+          <Nav className="">
+            <Nav>
+              {" "}
+              <li className={homeMatch ? "active" : ""}>
+                <Link
+                  style={{ textDecoration: "none", marginRight: "20px" }}
+                  to="/"
+                >
+                  Home
+                </Link>
+              </li>
+            </Nav>
+            <Nav>
+              {" "}
+              <li className={blogMatch ? "active" : ""}>
+                <Link style={{ textDecoration: "none" }} to="/blogs">
+                  Blog
+                </Link>
+              </li>
+            </Nav>
+          </Nav>
+          <Nav>
+            {user ? (
+              <Link to="/userdetail" className="ms-auto" style={{width:'30%'}}>
+                <img
+                  width="30"
+                  height="30"
+                  className="d-inline-block align-top"
+                  src={user?.photoURL}
+                  alt=""
+                  title={user?.displayName}
+                />
+              </Link>
+            ) : (
+              <Link to="/login">
+                <Button variant="secondary">Login</Button>
+              </Link>
+            )}
+            <Link to="/login" style={{ marginLeft: "10%", marginRight: "15%" }}>
+              <Button onClick={handleLogout} variant="secondary">
+                Logout
+              </Button>
+            </Link>
+          </Nav>
+        </Container>
+      </Navbar>
     </div>
   );
 };
