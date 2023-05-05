@@ -20,7 +20,7 @@ const Blogs = () => {
       <NavigationBar></NavigationBar>
       <button style={{marginLeft:'10%'}} onClick={handlePrint}>Download PDF</button>
       <Card style={{ width: "100%", height: "100%",padding:"5%",fontWeight:'bold' }}>
-        <Card.Body>
+        <Card.Body className="bg-light">
           <Card.Title>
            1. Tell us the differences between uncontrolled and controlled
             components
@@ -49,7 +49,7 @@ const Blogs = () => {
           </Card.Text>
         </Card.Body>
 
-        <Card.Body>
+        <Card.Body className="bg-light">
           <Card.Title>2. How to validate React props using PropTypes</Card.Title>
           <Card.Text>
             To validate props in a React component using PropTypes, you need to
@@ -59,7 +59,7 @@ const Blogs = () => {
           </Card.Text>
         </Card.Body>
 
-        <Card.Body>
+        <Card.Body className="bg-light">
           <Card.Title>
            3. Tell us the difference between nodejs and express js.
           </Card.Title>
@@ -71,7 +71,7 @@ const Blogs = () => {
           </Card.Text>
         </Card.Body>
 
-        <Card.Body>
+        <Card.Body className="bg-light">
           <Card.Title>
           4.  What is a custom hook, and why will you create a custom hook?
           </Card.Title>

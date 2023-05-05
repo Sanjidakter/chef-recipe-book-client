@@ -3,10 +3,10 @@ import React, { useContext } from "react";
 import berlin from "../../../assets/berlin.webp";
 import lisbon from "../../../assets/lisbon.webp";
 import sanfrisco from "../../../assets/sanfransico.webp";
-import landing from "../../../assets/landing.webp";
 import london from "../../../assets/london.webp";
 import p2 from "../../../assets/p2.webp";
 import p3 from "../../../assets/p3.webp";
+import us from "../../../assets/us.jpg"
 import "../Home/Home.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGripfire, faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -23,21 +23,21 @@ const Home = () => {
     return (
       <div style={{ fontFamily: "Arial, sans-serif", backgroundSize: " cover" }}>
         <header>
-          <h1 style={{ marginLeft: "30%" }}>Welcome to Chef Recipe Book</h1>
+          <h1 className="welcome" style={{ marginLeft: "20%" }}>Welcome to <span style={{fontWeight:'bold',color:'orange'}}>The New American Cuisine</span></h1>
         </header>
         <main className="row" style={{ display: "flex" }}>
           <div  className="intro col span-1-of-2">
-            <img src={landing} alt="" />
+            <img style={{width:'500px',height:'625px'}} src={us} alt="" />
           </div >
           <div className="col span-1-of-2"
             style={{ padding: "40px", textAlign: "center", borderRadius: "10px" }}
           >
             <h2 style={{ fontWeight: "bold", textAlign: "center" }}>
-              Discover delicious recipes from top chefs
+              Discover delicious recipes from top chefs around US
             </h2>
             <p>
               Browse our extensive collection of recipes from renowned chefs and
-              create your next culinary masterpiece.
+              create your next culinary masterpiece. Beside explore your experience with american cuisine with recipes from our chefs.
             </p>
             <a href="#">Get started</a>
           </div >
@@ -48,6 +48,7 @@ const Home = () => {
         >
           <div className="row oheading">
             <h2 style={{ fontWeight: "bold", textAlign: "center" }}>we're currently in these cities</h2>
+            <p style={{ textAlign: "center" }}><small>Providing the taste of american food at your doorstep.</small></p>
           </div>
           <div className="row">
             <div className="col span-1-of-4 ">
@@ -138,8 +139,8 @@ const Home = () => {
             <div className="col span-1-of-4 ">
               <blockquote>
                 <p>
-                  Chef Recipe Book is just awesome! I just launched a startup which leaves
-                  me with no time for cooking, so Chef Recipe Book is a life-saver. Now
+                  The New American Cuisine is just awesome! I just launched a startup which leaves
+                  me with no time for cooking, so The New American Cuisine is a life-saver. Now
                   that I got used to it, I couldn't live without my daily meals!
                 </p>
                 <cite>
@@ -155,8 +156,8 @@ const Home = () => {
             <div className="col span-1-of-4">
               <blockquote>
                 <p>
-                  Chef Recipe Book is just awesome! I just launched a startup which leaves
-                  me with no time for cooking, so Chef Recipe Book is a life-saver. Now
+                  The New American Cuisine is just awesome! I just launched a startup which leaves
+                  me with no time for cooking, so The New American Cuisine is a life-saver. Now
                   that I got used to it, I couldn't live without my daily meals!
                 </p>
                 <cite>
@@ -172,8 +173,8 @@ const Home = () => {
             <div className="col span-1-of-4">
               <blockquote>
                 <p>
-                  Chef Recipe Book is just awesome! I just launched a startup which leaves
-                  me with no time for cooking, so Chef Recipe Book is a life-saver. Now
+                  The New American Cuisine is just awesome! I just launched a startup which leaves
+                  me with no time for cooking, so The New American Cuisine is a life-saver. Now
                   that I got used to it, I couldn't live without my daily meals!
                 </p>
                 <cite>

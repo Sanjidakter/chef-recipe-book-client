@@ -33,7 +33,7 @@ const NavigationBar = () => {
             height="30"
             className="d-inline-block align-top"
           />{" "}
-          Chef Recipe Book
+          The New American Cuisine
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
